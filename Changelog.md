@@ -1,5 +1,9 @@
 # Changelog
 
+### 17.1.1 
+
+* Changed cronjob to regenerate zonefiles from template instead of downloading them
+
 ## 17.1.0
 
 ### New

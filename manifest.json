@@ -1,10 +1,10 @@
 {
-	"name":         "core-ns",
+	"name":         "blmx-ns",
 	"version":      "17.1.0",
-	"description":  "core.io Nameserver",
-	"organization": "SkyLime",
+	"description":  "blmx.de nameserver",
+	"organization": "blmx",
 	"brand":        "Instance",
-	"homepage":     "https://github.com/skylime/mi-core-ns",
+	"homepage":     "https://github.com/bluemaex/mi-blmx-ns",
 	"base":         "280debdb-dd05-4628-bf80-d16c84fb68b2",
 	"customer_metadata": {
 		"admin_authorized_keys": {"type": "text", "description": "SSH public authorized key(s) for the root user"},
@@ -19,7 +19,6 @@
 		"ssh_host_rsa_key.pub": {"type": "text", "description": "public SSH rsa key for the host daemon"},
 		"ssh_host_dsa_key":     {"type": "text", "description": "private SSH dsa key for the host daemon"},
 		"ssh_host_dsa_key.pub": {"type": "text", "description": "public SSH dsa key for the host daemon"},
-		"munin_master_allow":   {"type": "text", "description": "ip addresses (alternative hostname) of the munin master node"},
-		"ns_urls":              {"type": "text", "description": "URLs of an ZIP archive which contains DNS zone information"}
+		"munin_master_allow":   {"type": "text", "description": "ip addresses (alternative hostname) of the munin master node"}
 	}
 }
