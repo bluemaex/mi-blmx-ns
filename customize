@@ -22,11 +22,16 @@ set -o errexit
 echo "* Workaround for cron script to check logs"
 chmod 755 /opt/core/bin/check-log
 
+echo "* Configuring image specific packages.";
+git clone http://github.com/bluemaex/generate-zonefile.git /opt/blmx/generate-zonefile
+cd /opt/blmx/generate-zonefile && npm install
+
 echo "* Create nsd database folder and setup permissions"
 mkdir -p /var/nsd
 chown nsd:nsd /var/nsd
 
 echo "* Change permissions for nsd config folder"
+mkdir -p /opt/local/etc/nsd/zones
 chown -R nsd:nsd /opt/local/etc/nsd
 
 echo "* Activate munin plugins"
