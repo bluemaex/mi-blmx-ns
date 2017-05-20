@@ -1,12 +1,6 @@
 #!/usr/bin/env bash
-DIR=$(dirname $0)
+node /opt/blmx/generate-zonefile/generate-zonefile.js /opt/zonedata
 
-for file in /opt/zonedata/*; do
-  DOMAIN=$(basename $file)
-  DOMAIN=${DOMAIN:0:-5}
-  printf "zone:\n\tname: \"$DOMAIN\"\n\tzonefile: \"zones/$DOMAIN.forward\"\n" > /opt/local/etc/nsd/zones/$DOMAIN-nsd.conf
-  node $DIR/../generate-zonefile/generate-zonefile.js $file /opt/local/etc/nsd/zones/$DOMAIN.forward
-done
-
-nsd-control reconfig
-nsd-control reload
+cp /opt/zonedata/*.{conf,forward,reverse} /opt/local/etc/nsd/zones/
+nsd-control reconfig > /dev/null
+nsd-control reload > /dev/null
