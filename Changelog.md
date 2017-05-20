@@ -2,7 +2,9 @@
 
 ### 17.1.1 
 
-* Changed cronjob to regenerate zonefiles from template instead of downloading them
+* Changed cronjob to regenerate zonefiles from template instead of downloading them [bluemaex]
+* Fix naming of nsd munin plugins. [Thomas Merkel]
+* Change default pid file location to solve permission issue. [Thomas Merkel]
 
 ## 17.1.0
 
